@@ -8,7 +8,10 @@ Pod::Spec.new do |s|
     s.source = { :git => 'https://github.com/ewangke/DMOfferWallSDK.git' }
     s.description = "iOS SDK for Domob OfferWall"
     s.platform = :ios
-    s.source_files = '*.{h,a}'
+    s.source_files = '*.h'
+    s.preserve_paths = '*.a'
+    s.library = 'DomobOfferWallSDK'
+    s.xcconfig = { 'LIBRARY_SEARCH_PATHS' => '"$(PODS_ROOT)/DMOfferWallSDK"' }
     s.frameworks = 'SystemConfiguration', 'CoreGraphics', 'QuartzCore', 'CoreLocation'
     s.weak_frameworks = 'AdSupport', 'StoreKit'
     s.resources = 'DomobOfferWallBundle/DomobOfferWallBundle.bundle'
